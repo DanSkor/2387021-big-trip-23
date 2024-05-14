@@ -2,6 +2,7 @@ import SortEventsView from '../view/sort-events-view.js';
 import PointsListView from '../view/points-list-view.js';
 import NewPointView from '../view/new-point-view.js';
 import TripPointView from '../view/trip-point-view.js';
+import TripEmptyView from '../view/trip-empty-view.js';
 import {render, replace, RenderPosition} from '../framework/render.js';
 
 export default class BoardPresenter {
@@ -28,7 +29,16 @@ export default class BoardPresenter {
     });
   }
 
+  #renderEmptyView() {
+    render(new TripEmptyView({filter: this.#pointsModel.filters[0]}), this.this.#listComponent.element);
+  }
+
   #renderPoint(point) {
+    // if (isEmpty(point)) {
+    //   this.#renderEmptyView();
+    //   return;
+    // }
+
     const escKeyDownHandler = (evt) => {
       if (evt.key === 'Escape') {
         evt.preventDefault();

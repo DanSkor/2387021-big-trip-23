@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import {DATE_FORMAT, TIME_FORMAT} from './const.js';
+import {DATE_FORMAT, TIME_FORMAT} from '../const.js';
 
 function humanizeDueDate(dueDate) {
   return dueDate ? dayjs(dueDate).format(DATE_FORMAT) : '';

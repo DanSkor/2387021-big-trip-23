@@ -1,5 +1,5 @@
 import AbstractView from '../framework/view/abstract-view.js';
-import {humanizeDueDate, humanizeDueTime, getDuration, getActiveClass} from '../utils.js';
+import {humanizeDueDate, humanizeDueTime, getDuration, getActiveClass} from '../utils/time.js';
 
 function getOffersBlock(offers) {
   if (!offers || offers.length === 0) {
